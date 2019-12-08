@@ -78,6 +78,7 @@ public class LoginActivity extends AppCompatActivity {
                     String bodyString = response.body() != null ? response.body().string() : response.errorBody().string();
                     Log.d("TryLogin", call.request().url().toString());
                     Log.d("TryLogin", bodyString);
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

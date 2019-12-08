@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#627986"
     tools:context=".RegisterActivity">
 <RelativeLayout
     android:layout_width="match_parent"
@@ -15,6 +16,7 @@
         android:id="@+id/tregistrasi"
         android:text="REGISTRASI"
         android:textSize="28dp"
+        android:textColor="#FFC107"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
@@ -78,8 +80,9 @@
         android:layout_width="800dp"
         android:layout_height="50dp"
         android:id="@+id/bRegister"
-        android:hint="Registrasi"
+        android:text="REGISTRASI"
         android:onClick="bRegister"
+        android:background="@android:color/holo_orange_light"
         android:layout_below="@id/ekonfPassword"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"

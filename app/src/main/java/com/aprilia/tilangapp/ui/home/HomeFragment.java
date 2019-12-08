@@ -15,7 +15,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.aprilia.tilangapp.Model.InfoTilang;
+import com.aprilia.tilangapp.Model.daftarPelanggar;
 import com.aprilia.tilangapp.R;
+import com.aprilia.tilangapp.adapter.DaftarRecyclerViewAdapter;
 import com.aprilia.tilangapp.adapter.InfoRecyclerViewAdapter;
 import com.aprilia.tilangapp.data.APIService;
 import com.aprilia.tilangapp.data.APIWeb;
@@ -44,6 +46,8 @@ public class HomeFragment extends Fragment {
     private ArrayList<InfoTilang> infoTilang;
     private GridLayoutManager gridLayoutManager;
     private LinearLayoutManager linearLayoutManager;
+    private ArrayList<daftarPelanggar> daftarPelanggaran;
+    private DaftarRecyclerViewAdapter DaftarRecyclerViewAdapter;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -83,7 +87,7 @@ public class HomeFragment extends Fragment {
                     for (int i = 0; i < result.length(); i++) {
 //                            public InfoTilang(String id, String image, String namaKegiatan, String tanggal, String tanggalEnd, String lokasi, String desc){
                         JSONObject dataResult = result.getJSONObject(i);
-                        infoTilang.add(new InfoTilang(dataResult.getString("id"), dataResult.getString("file"), dataResult.getString("nama"),
+                        infoTilang.add(new InfoTilang(dataResult.getString("id"), dataResult.getString("foto"), dataResult.getString("nama"),
                                 dataResult.getString("tanggal_mulai"), dataResult.getString("tanggal_selesai"), dataResult.getString("lokasi"),
                                 dataResult.getString("keterangan")));
                     }
@@ -113,13 +117,53 @@ public class HomeFragment extends Fragment {
         recyclerView.setAdapter(InfoRecyclerViewAdapter);
     }
 
-
-    public void adapter() {
-//        infoRecyclerViewAdapter = new InfoRecyclerViewAdapter();
+//    private void getPelanggaran(){
+//        APIService apiService = APIWeb.getRetrofit(APIWeb.BASE_URL2).create(APIService.class);
+//        final Call<ResponseBody> daftarPelanggaranResponseCall = apiService.getPelanggaran();
+//        daftarPelanggaranResponseCall.enqueue(new Callback<ResponseBody>() {
+//
+//            @Override
+//            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+//                String bodyString = null;
+//                try {
+//                    bodyString = response.body() != null ? response.body().string() : response.errorBody().string();
+//                    Log.d("TesHasilJSON", bodyString);
+//                    JSONObject bodyJSON = new JSONObject(bodyString);
+//                    daftarPelanggaran = new ArrayList<>();
+//                    JSONArray result = bodyJSON.getJSONArray("result");
+//
+//                    //isi InfoTilang;
+//                    for (int i = 0; i < result.length(); i++) {
+////    public daftarPelanggar(String id, String nama, String no_sim, String plat_nomor, String lokasi_tilang, String lokasi_sidang, String pelanggaran, String nama_polisi, String tanggal_sidang) {
+//                        JSONObject dataResult = result.getJSONObject(i);
+//                        daftarPelanggaran.add(new daftarPelanggar(dataResult.getString("id"), dataResult.getString("nama"), dataResult.getString("no_sim"),
+//                                dataResult.getString("plat_nomor"), dataResult.getString("lokasi_tilang"), dataResult.getString("lokasi_sidang"),
+//                                dataResult.getString("pelanggaran"), dataResult.getString("nama_polisi"),dataResult.getString("tanggal_sidang")));
+//                    }
+//                    initDaftarList();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<ResponseBody> call, Throwable t) {
+//                Log.d("infoPelanggaran", t.toString());
+//
+//            }
+//        });
+//
+//    }
+//
+//    private void initDaftarList() {
+//        gridLayoutManager = new GridLayoutManager(getContext(), 1);
 //        linearLayoutManager = new LinearLayoutManager(getContext());
-//        infoRecyclerView.setHasFixedSize(true);
-//        infoRecyclerView.setLayoutManager(linearLayoutManager);
-//        infoRecyclerView.setAdapter(infoRecyclerViewAdapter);
+//        DaftarRecyclerViewAdapter = new DaftarRecyclerViewAdapter(daftarPelanggaran);
+//        recyclerView.setLayoutManager(gridLayoutManager);
+//        recyclerView.setHasFixedSize(true);
+//        recyclerView.setAdapter(DaftarRecyclerViewAdapter);
+//    }
 
-    }
 }

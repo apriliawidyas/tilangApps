@@ -15,6 +15,7 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity"/>
         <activity android:name=".ui.home.HomeFragment"/>
+        <activity android:name=".ui.home.DaftarPelanggaranFragment"/>
         <activity
             android:name=".LoginActivity"
             android:label="@string/app_name" >

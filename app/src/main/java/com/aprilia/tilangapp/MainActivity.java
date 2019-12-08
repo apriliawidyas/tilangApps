@@ -3,6 +3,7 @@ package com.aprilia.tilangapp;
 import android.os.Bundle;
 
 import com.aprilia.tilangapp.Model.InfoTilang;
+import com.aprilia.tilangapp.Model.daftarPelanggar;
 import com.aprilia.tilangapp.adapter.InfoRecyclerViewAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private InfoRecyclerViewAdapter InfoRecyclerViewAdapter;
     private ArrayList<InfoTilang> infoTilangResponse;
+    private ArrayList<daftarPelanggar> daftarPelanggarResponse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,33 +38,5 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navView, navController);
     }
 
-//    private void getInfo(){
-//        APIService apiService = APIWeb.getRetrofit().create(APIService.class);
-//        final Call<infoTilangResponse> infoTilangResponseCall = apiService.getInfo();
-//        infoTilangResponseCall.enqueue(new Callback<infoTilangResponse>() {
-//            @Override
-//            public void onResponse(Call<infoTilangResponse> call, Response<infoTilangResponse> response) {
-//                infoTilangResponse = response.body().getResults();
-//                Log.d("infoDataTilang", response.body().toString());
-//
-//                initInfoList();
-//
-//            }
-//
-//            @Override
-//            public void onFailure(Call<infoTilangResponse> call, Throwable t) {
-//                Log.d("infoDataTilang", t.toString());
-//            }
-//        });
-//    }
-
-//    private void initInfoList() {
-//        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
-//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-//        InfoRecyclerViewAdapter = new InfoRecyclerViewAdapter(infoTilangResponse);
-//        recyclerView.setLayoutManager(gridLayoutManager);
-//        recyclerView.setHasFixedSize(true);
-//        recyclerView.setAdapter(InfoRecyclerViewAdapter);
-//    }
 
 }

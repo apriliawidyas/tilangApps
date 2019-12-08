@@ -67,6 +67,7 @@ public class RegisterActivity extends AppCompatActivity {
         final String noSim = no_sim.getText().toString();
         final String passwordString = password.getText().toString();
         final Map<String, RequestBody> requestFormData = new HashMap<>();
+
         requestFormData.put("name", RequestBody.create(MediaType.parse("multipart/form-data"),namaString ));
         requestFormData.put("username", RequestBody.create(MediaType.parse("multipart/form-data"), usernameString));
         requestFormData.put("no_sim", RequestBody.create(MediaType.parse("multipart/form-data"), noSim));

@@ -39,4 +39,8 @@ public interface APIService {
     @GET("public/dataInfoTilang")
     Call<ResponseBody> getInfo();
 
+    //pelanggaranSaya
+    @GET("public/api/infoTilang/pelanggaranSaya")
+    Call<ResponseBody> getPelanggaran();
+
 }

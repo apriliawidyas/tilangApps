@@ -8,7 +8,7 @@ public class InfoTilang {
     @SerializedName("id")
     @Expose
     private String id;
-    @SerializedName("file")
+    @SerializedName("foto")
     @Expose
     private String image;
     @SerializedName("nama")
