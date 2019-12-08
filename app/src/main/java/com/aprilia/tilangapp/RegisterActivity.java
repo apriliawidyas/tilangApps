@@ -83,7 +83,7 @@ public class RegisterActivity extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                startActivity(new Intent(getApplicationContext(), HomeFragment.class));
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
 
             @Override

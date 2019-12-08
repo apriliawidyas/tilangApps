@@ -66,7 +66,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void getInfo() {
-        APIService apiService = APIWeb.getRetrofit().create(APIService.class);
+        APIService apiService = APIWeb.getRetrofit(APIWeb.BASE_URL).create(APIService.class);
         final Call<ResponseBody> infoTilangResponseCall = apiService.getInfo();
         infoTilangResponseCall.enqueue(new Callback<ResponseBody>() {
             @Override
