@@ -6,14 +6,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.aprilia.tilangapp.data.APIService;
 import com.aprilia.tilangapp.data.APIWeb;
-import com.aprilia.tilangapp.ui.home.HomeFragment;
+import com.aprilia.tilangapp.ui.main.MainActivity;
 
 import java.io.IOException;
 import java.util.HashMap;

@@ -1,26 +1,19 @@
 package com.aprilia.tilangapp;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Canvas;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.aprilia.tilangapp.data.APIService;
 import com.aprilia.tilangapp.data.APIWeb;
-import com.aprilia.tilangapp.ui.home.HomeFragment;
-import com.google.gson.JsonElement;
+import com.aprilia.tilangapp.ui.infotilang.InfoTilangFragment;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -84,7 +77,7 @@ public class RegisterActivity extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), InfoTilangFragment.class));
             }
 
             @Override
