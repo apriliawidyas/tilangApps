@@ -30,7 +30,8 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class InfoTilangFragment extends Fragment {
+public class
+InfoTilangFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private com.aprilia.tilangapp.adapter.InfoRecyclerViewAdapter InfoRecyclerViewAdapter;

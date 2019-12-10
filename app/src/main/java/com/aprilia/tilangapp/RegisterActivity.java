@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.aprilia.tilangapp.data.APIService;
 import com.aprilia.tilangapp.data.APIWeb;
 import com.aprilia.tilangapp.ui.infotilang.InfoTilangFragment;
+import com.aprilia.tilangapp.ui.main.MainActivity;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -77,7 +78,7 @@ public class RegisterActivity extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                startActivity(new Intent(getApplicationContext(), InfoTilangFragment.class));
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
 
             @Override

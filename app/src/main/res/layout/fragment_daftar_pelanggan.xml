@@ -6,9 +6,11 @@
     tools:context=".ui.daftarpelanggan.DaftarPelangganFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Simpen recyclerview daftar pelanggan di fragment ini" />
+        android:layout_height="wrap_content"
+        tools:scrollbars="vertical"
+        tools:ignore="MissingConstraints" />
 
 </FrameLayout>
