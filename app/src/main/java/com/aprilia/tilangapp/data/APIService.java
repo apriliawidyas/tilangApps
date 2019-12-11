@@ -43,4 +43,5 @@ public interface APIService {
     @GET("public/api/infoTilang/pelanggaranSaya")
     Call<ResponseBody> getPelanggaran();
 
+    Call<ResponseBody> login(String usernameLogin, String passwordLogin);
 }
