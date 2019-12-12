@@ -1,5 +1,7 @@
 package com.aprilia.tilangapp.ui.daftarpelanggan;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -9,11 +11,13 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.aprilia.tilangapp.LoginActivity;
 import com.aprilia.tilangapp.Model.daftarPelanggar;
 import com.aprilia.tilangapp.R;
 import com.aprilia.tilangapp.adapter.DaftarRecyclerViewAdapter;
@@ -39,6 +43,7 @@ public class DaftarPelangganFragment extends Fragment {
     private LinearLayoutManager linearLayoutManager;
     private ArrayList<daftarPelanggar> daftarPelanggaran;
     private com.aprilia.tilangapp.adapter.DaftarRecyclerViewAdapter DaftarRecyclerViewAdapter;
+    private android.preference.PreferenceManager PreferenceManager;
 
     public DaftarPelangganFragment() {
         // Required empty public constructor
@@ -60,20 +65,26 @@ public class DaftarPelangganFragment extends Fragment {
 
     private void getPelanggaran() {
         APIService apiService = APIWeb.getRetrofit(APIWeb.BASE_URL2).create(APIService.class);
-        final Call<ResponseBody> daftarPelanggaranResponseCall = apiService.getPelanggaran();
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("Authenticate", Context.MODE_PRIVATE);
+        String token = sharedPreferences.getString("token", "");
+        final Call<ResponseBody> daftarPelanggaranResponseCall = apiService.getAuthorizedDriver(token);
+        Log.d("Token1",token);
         daftarPelanggaranResponseCall.enqueue(new Callback<ResponseBody>() {
-
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 String bodyString = null;
+                Log.d("Cobacall","respon");
                 try {
                     bodyString = response.body() != null ? response.body().string() : response.errorBody().string();
-                    Log.d("TesHasilJSON", bodyString);
+                    Log.d("TesHasiDaftar", bodyString);
                     JSONObject bodyJSON = new JSONObject(bodyString);
+                    Log.d("TesHasiDaftar", "0");
                     daftarPelanggaran = new ArrayList<>();
+                    Log.d("TesHasiDaftar1", "1");
                     JSONArray result = bodyJSON.getJSONArray("result");
+                    Log.d("TesHasiDaftar2", "2");
 
-                    //isi InfoTilang;
+//                    //isi InfoTilang;
                     for (int i = 0; i < result.length(); i++) {
 //    public daftarPelanggar(String id, String nama, String no_sim, String plat_nomor, String lokasi_tilang, String lokasi_sidang, String pelanggaran, String nama_polisi, String tanggal_sidang) {
                         JSONObject dataResult = result.getJSONObject(i);
@@ -83,8 +94,10 @@ public class DaftarPelangganFragment extends Fragment {
                     }
                     initDaftarList();
                 } catch (IOException e) {
+                    Log.d("exception",e.getMessage());
                     e.printStackTrace();
-                } catch (JSONException e) {
+                }
+                catch (JSONException e) {
                     e.printStackTrace();
                 }
             }

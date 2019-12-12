@@ -61,6 +61,7 @@ InfoTilangFragment extends Fragment {
         APIService apiService = APIWeb.getRetrofit(APIWeb.BASE_URL).create(APIService.class);
         final Call<ResponseBody> infoTilangResponseCall = apiService.getInfo();
         infoTilangResponseCall.enqueue(new Callback<ResponseBody>() {
+
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 String bodyString = null;
@@ -70,7 +71,6 @@ InfoTilangFragment extends Fragment {
                     JSONObject bodyJSON = new JSONObject(bodyString);
                     infoTilang = new ArrayList<>();
                     JSONArray result = bodyJSON.getJSONArray("result");
-
                     //isi InfoTilang;
                     for (int i = 0; i < result.length(); i++) {
 //                            public InfoTilang(String id, String image, String namaKegiatan, String tanggal, String tanggalEnd, String lokasi, String desc){

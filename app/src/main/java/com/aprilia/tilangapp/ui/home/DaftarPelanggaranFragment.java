@@ -60,7 +60,7 @@ public class DaftarPelanggaranFragment extends Fragment {
 
     private void getPelanggaran(){
         APIService apiService = APIWeb.getRetrofit(APIWeb.BASE_URL2).create(APIService.class);
-        final Call<ResponseBody> daftarPelanggaranResponseCall = apiService.getPelanggaran();
+        final Call<ResponseBody> daftarPelanggaranResponseCall = apiService.getAuthorizedDriver("Authorization");
         daftarPelanggaranResponseCall.enqueue(new Callback<ResponseBody>() {
 
             @Override

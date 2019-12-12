@@ -30,7 +30,7 @@ import retrofit2.Response;
 
 
 public class LoginActivity extends AppCompatActivity {
-    private Button bSignup,bLogin;
+    private Button bSignup, bLogin;
     private EditText username, password;
     private APIService apiService;
 
@@ -70,8 +70,8 @@ public class LoginActivity extends AppCompatActivity {
         final String usernameLogin = username.getText().toString();
         final String passwordLogin = password.getText().toString();
         final Map<String, RequestBody> requestFormData = new HashMap<>();
-        requestFormData.put("username", RequestBody.create(MediaType.parse("multipart/form-data"),usernameLogin ));
-        requestFormData.put("password", RequestBody.create(MediaType.parse("multipart/form-data"),passwordLogin ));
+        requestFormData.put("username", RequestBody.create(MediaType.parse("multipart/form-data"), usernameLogin));
+        requestFormData.put("password", RequestBody.create(MediaType.parse("multipart/form-data"), passwordLogin));
         new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(Void... voids) {
@@ -92,9 +92,10 @@ public class LoginActivity extends AppCompatActivity {
                             SharedPreferences sharedPreferences = LoginActivity.this.getSharedPreferences("Authenticate", Context.MODE_PRIVATE);
                             SharedPreferences.Editor editor = sharedPreferences.edit();
                             editor.clear();
-                            editor.putString(getString(R.string.token), bearer);
+                            editor.putString("token", "Bearer " + bearer);
                             editor.apply();
                             Log.d("bearer", bearer + "");
+                            Log.d("bearer", token + "");
 
                             startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         } else {
