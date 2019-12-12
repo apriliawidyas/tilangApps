@@ -1,64 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="160dp">
 
-    <TextView
-        android:id="@+id/nama"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textSize="14sp"/>
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/no_sim"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textSize="14sp"/>
+        <TextView
+            android:id="@+id/Nama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Nama                    "
+            android:textSize="14sp"/>
 
-    <TextView
-        android:id="@+id/plat"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="normal"
-        android:textSize="12sp"/>
+        <TextView
+            android:id="@+id/NoSIM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="No. SIM               "
+            android:textSize="14sp"/>
 
-    <TextView
-        android:id="@+id/lokasiTilang"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="normal"
-        android:textSize="12sp"/>
+        <TextView
+            android:id="@+id/platNomor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="No. Kendaraan   "
+            android:textSize="14sp"/>
 
-    <TextView
-        android:id="@+id/tanggal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="normal"
-        android:textSize="12sp"/>
+        <TextView
+            android:id="@+id/LokasiTilang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Lokasi Tilang    "
+            android:textSize="14sp"/>
 
-    <TextView
-        android:id="@+id/pelanggaran"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="normal"
-        android:textSize="12sp"/>
+        <TextView
+            android:id="@+id/Tanggal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Tanggal    "
+            android:textSize="14sp"/>
 
-    <TextView
-        android:id="@+id/lokasiSidang"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="normal"
-        android:textSize="12sp"/>
+        <TextView
+            android:id="@+id/Pelanggaran"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Pelanggaran"
+            android:textSize="14sp"/>
 
-    <TextView
-        android:id="@+id/namaPolisi"
+        <TextView
+            android:id="@+id/LokasiSidang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Lokasi Sidang"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/NamaPolisi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Nama Polisi"
+            android:textSize="14sp"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="normal"
-        android:textSize="12sp"
-        android:ellipsize="end"/>
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/nama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/no_sim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/plat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/lokasiTilang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/tanggal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/pelanggaran"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/lokasiSidang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/namaPolisi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:ellipsize="end"/>
+
+    </LinearLayout>
 
 </LinearLayout>
